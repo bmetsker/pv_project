@@ -1,9 +1,10 @@
-'please God work'
 library(dplyr)
 
+'Datasources'
+race_by_city <- read.csv(file = "Data/ShareRaceByCity.csv")
+police_killings <- read.csv(file = "Data/PoliceKillingsUS.csv")
+education_stats <- read.csv(file = "Data/PercentOVer25CompletedHighSchool.csv")
+poverty_stats <- read.csv(file =  "Data/PercentagePeopleBelowPovertyLevel.csv")
+income_stats <- read.csv(file = "Data/MedianHouseholdIncome2015.csv")
 
-library(httr)
-apiKey <- "33kz-ixgy"
-result <- GET("https://data.seattle.gov/resource/33kz-ixgy.json",
-              add_headers(Authorization = paste("Key", apiKey)))
-
+summary(police_killings$armed == "gun" && police_killings$race == "B")
